@@ -1,0 +1,19 @@
+<%- include('partials/_navbar.js') %>
+<link rel="stylesheet" href="/css/stories.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="container">
+  <h1>New York Times Top Stories</h1>
+  <div class="stories-list">
+    <% stories.forEach(story => { %>
+      <div class="story">
+        <% if (story.multimedia && story.multimedia.length > 0) { %>
+          <img src="<%= story.multimedia[0].url %>" alt="<%= story.title %>" style="width:100px;height:100px;">
+        <% } %>
+        <h2><%= story.title %></h2>
+        <p><%= story.abstract %></p>
+        <a href="<%= story.url %>" target="_blank" class="view-story-btn">Read More</a>
+      </div>
+    <% }); %>
+  </div>
+</div>
+<footer>Kalibekov Alikhan IT-2207</footer>

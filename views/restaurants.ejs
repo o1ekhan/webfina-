@@ -1,0 +1,19 @@
+
+<%- include('partials/_navbar.js') %>
+<link rel="stylesheet" href="/css/rest.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="container">
+  <h1>Restaurants</h1>
+  <div class="restaurants-list">
+    <% restaurants.forEach(restaurant => { %>
+      <div class="restaurant">
+        <img src="<%= restaurant.image_url %>" alt="<%= restaurant.name %>" style="width:100px;height:100px;">
+        <h2><%= restaurant.name %></h2>
+        <p><%= restaurant.location.address1 %></p>
+        <p>Rating: <%= restaurant.rating %> | Review Count: <%= restaurant.review_count %></p>
+        <a href="<%= restaurant.url %>" target="_blank" class="view-yelp-btn">View on Yelp</a>
+      </div>
+    <% }); %>
+  </div>
+</div>
+<footer>Kalibekov Alikhan IT-2207</footer>

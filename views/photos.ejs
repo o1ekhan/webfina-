@@ -1,0 +1,16 @@
+<%- include('partials/_navbar.js') %>
+<link rel="stylesheet" href="/css/photos.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="container">
+  <h1>New York Photos</h1>
+  <div class="photo-grid">
+    <% photos.forEach(photo => { %>
+      <div class="photo-item">
+        <img src="<%= photo.urls.regular %>" alt="<%= photo.alt_description %>" loading="lazy">
+        <p>Photo by <%= photo.user.name %> on <a href="<%= photo.user.links.html %>?utm_source=your_app_name&utm_medium=referral">Unsplash</a></p>
+      </div>
+    <% }); %>
+  </div>
+</div>
+
+<footer>Kalibekov Alikhan IT-2207</footer>
